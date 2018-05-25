@@ -11,10 +11,13 @@ MainWindow::MainWindow(char arg[],QWidget *parent)
 	//{
 	//	station[i] = new QLabel(this);
 	//}
-	if (arg)
+	
+	if (arg != NULL)
 	{
 		commond = arg;
 	}
+	else
+		commond = NULL;
 	address_in = new QLabel(this);
 	address_out = new QLabel(this);
 	address_in_in = new QLabel(this);
@@ -56,7 +59,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::paintEvent(QPaintEvent *)
 {
-	
+
 	QPainter painter(this->bufferPixmap);
 	//QPainter painter2(this->station);
 	/* Draw all the elements. */
@@ -67,7 +70,7 @@ void MainWindow::paintEvent(QPaintEvent *)
 	this->Arrow->logic();
 	this->Arrow->draw(&painter);
 
-	
+
 	QPainter mainWindowPainter(this);
 	mainWindowPainter.drawPixmap(QRect(0, 0, 4500, 1000), *this->bufferPixmap);
 	//mainWindowPainter.drawPixmap(QRect(0, 0, this->width(), this->height()), *this->station);
@@ -78,7 +81,7 @@ void MainWindow::paintEvent(QPaintEvent *)
 		if (way[order] == 0)
 			order--;
 		for (int i = 0; i <= order; i++)
-		{	
+		{
 			if (way[i] < 0)
 			{
 				point_color++;
@@ -91,34 +94,36 @@ void MainWindow::paintEvent(QPaintEvent *)
 			Point loc1;
 			if (i > 0)
 			{
-				if(way[i-1]<0)
-					loc1 = this->Findway->getloc(way[i - 2]);
-				else
-					loc1 = this->Findway->getloc(way[i - 1]);
-				if (loc1.x == x)
+			if (way[i - 1] < 0)
+				loc1 = this->Findway->getloc(way[i - 2]);
+			else
+				loc1 = this->Findway->getloc(way[i - 1]);
+			if (loc1.x == x)
+			{
+				ty = y - 40;
+				if (i % 2)
 				{
-					ty = y - 40;
-					if (i % 2)
-					{
-						tx = x-68;
-					}
-				}
-				else if (loc1.y == y)
-				{
-					tx = x - 35;
-					if (i % 2 )
-					{
-						ty = y - 60;
-					}
+					tx = x - 68;
 				}
 			}
+			else if (loc1.y == y)
+			{
+				tx = x - 35;
+				if (i % 2)
+				{
+					ty = y - 60;
+				}
+			}
+			}
 			char *stationname = this->Findway->id2str(way[i]);
-			this->point->draw(&mainWindowPainter, x, y,tx,ty, stationname, point_color);
+			this->point->draw(&mainWindowPainter, x, y, tx, ty, stationname, point_color);
 		}
 		order++;
 	}
-	else
-	startmap();
+	else if (commond != NULL)
+	{
+		startmap();
+	}
 }
 
 void MainWindow::startmap()
@@ -131,7 +136,7 @@ void MainWindow::startmap()
 	{
 		way[m] = 0;
 	}
-	order=0;
+	order = 0;
 	this->drawmap();
 	this->drawaddress();
 
@@ -160,6 +165,9 @@ void MainWindow::drawaddress()
 		QTextCodec * a = QTextCodec::codecForName("GB18030");
 
 		strText = a->toUnicode(commond);
+		commond = NULL;
+		//this->address_aim->inputaim_print(address_in_in, strText);
+
 	}
 	else
 	{
@@ -173,7 +181,7 @@ void MainWindow::drawaddress()
 	arrplace = strText.section('-', 1, 1);
 	echoLineEdit->clear();
 
-	
+
 	echoLineEdit->setFocus();
 
 	QByteArray cpath = aimplace.toLocal8Bit();
@@ -184,8 +192,13 @@ void MainWindow::drawaddress()
 	std::string str2 = arrplace.toStdString();
 	char *arrplace_c = apath.data();
 	int x = this->Findway->str2id(arrplace_c);
+	//if (!strcmp(typeid(aimplace_c).name(), "char"))
+	//{
+
+	//}
 	if (this->Findway->str2id(aimplace_c)<0 && this->Findway->str2id(arrplace_c) < 0&& this->Findway->printline(aimplace_c)<0)
 	{
+		
 		erro->information(NULL, "Warning", QString::fromLocal8Bit("请按要求输入"), QMessageBox::Yes);
 	}
 	else if (this->Findway->printline(aimplace_c) >= 0)//输出线路
@@ -212,7 +225,7 @@ void MainWindow::drawaddress()
 	//const char* aimplace_a = str.c_str();
 	//char* aimplace_c = new char[50];
 	//strcpy(aimplace_c, aimplace_a);
-	else
+	else if (this->Findway->str2id(aimplace_c)>0 && this->Findway->str2id(arrplace_c)>0)
 	{
 		this->address_aim->inputaim_print(address_in_in, aimplace);
 		this->address_aim->inputarr_print(address_out_in, arrplace);

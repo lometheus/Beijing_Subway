@@ -7,6 +7,6 @@
         <file alias="point_red">images/point_RED.png</file>
         <file alias="point_yel">images/point_YEL.png</file>
         <file alias="point_gre">images/point_GRE.png</file>
-
+        <file alias="point_wri">images/point_WRI.png</file>
     </qresource>
 </RCC>

@@ -1,22 +1,25 @@
 #include "Subway.h"
 #include <QtWidgets/QApplication>
-using namespace std;
 int main(int argc, char *argv[])
 {
 	char *arg;
-	cout << argv[1] << endl;
-	if (!strcmp(argv[1], "/b"))
+	if (argv[1])
 	{
-		strcpy(arg, argv[2]);
-
-		strcat(arg, "-");
-		strcat(arg, argv[3]);
+		if (!strcmp(argv[1], "/b"))
+		{
+			strcpy(arg, argv[2]);
+			strcat(arg, "-");
+			strcat(arg, argv[3]);
+		}
+		else if (!strcmp(argv[1], "/g"))
+		{
+			arg = argv[2];
+		}
 	}
-	else if (!strcmp(argv[1], "/g"))
-	{
-		arg = argv[2];
-	}
+	else
+		arg = NULL;
 	QApplication a(argc, argv);
+
 	MainWindow w(arg);
 
 	w.show();

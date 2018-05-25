@@ -72,6 +72,7 @@ void Elepoint::loadFrame()
 	this->addFrame(QPixmap(":/images/point_red"));
 	this->addFrame(QPixmap(":/images/point_yel"));
 	this->addFrame(QPixmap(":/images/point_gre"));
+	this->addFrame(QPixmap(":/images/point_wri"));
 }
 
 QRectF& Elepoint::getRect(PipeType type)
