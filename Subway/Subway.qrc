@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="bg">images/background_mainwnd.jpg</file>
+        <file alias="st">images/button_play.png</file>
+        <file alias="arrow">images/arrow.png</file>
+        <file alias="point">images/point.png</file>
+        <file alias="point_red">images/point_RED.png</file>
+        <file alias="point_yel">images/point_YEL.png</file>
+        <file alias="point_gre">images/point_GRE.png</file>
+
+    </qresource>
+</RCC>
