@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Station">
+    <Position X="13.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAgAAAEAAACIAIAAAEAAAAAgAAgAIABgA=</HashCode>
+      <FileName>Read.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Line">
+    <Position X="9.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAABAAAAAAAAAAAAAAIAAAAAAFUAAAAAAAAAAABFAA=</HashCode>
+      <FileName>Read.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Read">
+    <Position X="7" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>wAkIASBCAQAAAIICAIAMAIAgABJ0AAIIAAgAAAAAEAA=</HashCode>
+      <FileName>Read.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainWindow">
+    <Position X="11.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQYBECBAABAAAIAhAAACAQAACBEAAACIEgAAQAAIAk=</HashCode>
+      <FileName>Subway.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="address">
+    <Position X="9.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAACABAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>address.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="arrow">
+    <Position X="2.75" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAIAAAAAAAAAAAIAAAACAAAgAAA=</HashCode>
+      <FileName>arrow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Background">
+    <Position X="5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAIAAAAAAAAAAAIAAAACAAAgAAA=</HashCode>
+      <FileName>Background.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Elepoint">
+    <Position X="0.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACAAARAAAAIAACAAAAIAAAIAAAACAAAgAAA=</HashCode>
+      <FileName>Elepoint.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MAPElement">
+    <Position X="2.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAABAAAAFQgAAEAAAAAAAAAAAIAAAAgAAAgAAA=</HashCode>
+      <FileName>MAPElement.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Point">
+    <Position X="13.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Read.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="PipeType">
+    <Position X="9.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Elepoint.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
